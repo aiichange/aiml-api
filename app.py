@@ -1,3 +1,4 @@
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
@@ -19,3 +20,4 @@ def predict(input_data: InputData):
     prediction = model.predict(input_array)
     return {"prediction": prediction.tolist()}
 # test
+# Test update: Triggering CI/CD on GitHub push
