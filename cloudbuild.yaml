@@ -1,0 +1,16 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/elevated-bonito-428306-h6/aiml-api', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/elevated-bonito-428306-h6/aiml-api']
+
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'gcloud'
+  args: [
+    'run', 'deploy', 'aiml-api',
+    '--image', 'gcr.io/elevated-bonito-428306-h6/aiml-api',
+    '--region', 'asia-south1',
+    '--platform', 'managed',
+    '--allow-unauthenticated'
+  ]
