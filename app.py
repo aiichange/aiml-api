@@ -18,3 +18,4 @@ def predict(input_data: InputData):
     input_array = np.array([input_data.data])
     prediction = model.predict(input_array)
     return {"prediction": prediction.tolist()}
+# test
