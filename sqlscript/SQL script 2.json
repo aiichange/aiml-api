@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 2",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [AttendanceStatusTypeId]\n,[AttendanceStatusTypeName]\n,[AttendanceStatusTypeDescription]\n FROM [lake_analytics_db].[dbo].[AttendanceStatusType]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "lake_analytics_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
