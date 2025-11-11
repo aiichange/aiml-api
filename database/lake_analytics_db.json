@@ -1,0 +1,26 @@
+{
+	"name": "lake_analytics_db",
+	"properties": {
+		"Name": "lake_analytics_db",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true,
+			"DerivedModelDBInfo": "{\"ModelDirectives\":{\"BaseModel\":{\"Name\":\"Agriculture\",\"Version\":\"1.3.0\"}}}"
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://dlgen2@rainingcloudsynapsestore.dfs.core.windows.net/lake_analytics_db",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "rainingcloud-synapse-WorkspaceDefaultStorage"
+			}
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "42c5144f-6908-40ea-9034-f071c70c605a"
+	},
+	"type": "DATABASE"
+}

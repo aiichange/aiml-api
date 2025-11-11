@@ -1,0 +1,136 @@
+{
+	"name": "AttendanceStatusType",
+	"properties": {
+		"Name": "AttendanceStatusType",
+		"EntityType": "TABLE",
+		"TableType": "EXTERNAL",
+		"Namespace": {
+			"SchemaName": null,
+			"DatabaseName": "lake_analytics_db",
+			"DatabaseId": null
+		},
+		"StorageDescriptor": {
+			"Distribution": null,
+			"Columns": [
+				{
+					"Name": "AttendanceStatusTypeId",
+					"Description": "The unique identifier of an Attendance Status Type.",
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Length": 0,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AttendanceStatusType.cdm.json/AttendanceStatusType",
+						"Name": "AttendanceStatusTypeId"
+					}
+				},
+				{
+					"Name": "AttendanceStatusTypeName",
+					"Description": "The name of an Attendance Status Type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 256,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AttendanceStatusType.cdm.json/AttendanceStatusType",
+						"Name": "AttendanceStatusTypeName"
+					}
+				},
+				{
+					"Name": "AttendanceStatusTypeDescription",
+					"Description": "The description of an Attendance Status Type.",
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 2048,
+						"Precision": 0,
+						"Scale": 0,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					},
+					"BaseAttributeReference": {
+						"Entity": "AttendanceStatusType.cdm.json/AttendanceStatusType",
+						"Name": "AttendanceStatusTypeDescription"
+					}
+				}
+			],
+			"ColumnSetEntityName": "3a297fa0-b944-4969-bcd3-daddb7acbd2a",
+			"Format": {
+				"InputFormat": "org.apache.hadoop.mapred.SequenceFileInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat",
+				"FormatType": "csv",
+				"SerializeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+				"Properties": {
+					"path": "abfss://dlgen2@rainingcloudsynapsestore.dfs.core.windows.net/lake_analytics_db/AttendanceStatusType",
+					"delimiter": ",",
+					"firstRowAsHeader": "false",
+					"multiLine": "false",
+					"serialization.format": "1",
+					"escape": "\\",
+					"quote": "\"",
+					"FormatTypeSetToDatabaseDefault": true,
+					"header": "false"
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlgen2@rainingcloudsynapsestore.dfs.core.windows.net/lake_analytics_db/AttendanceStatusType",
+				"Properties": {
+					"LinkedServiceName": "rainingcloud-synapse-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"AttendanceStatusTypeId\":{\"entity\":\"AttendanceStatusType.cdm.json/AttendanceStatusType\",\"name\":\"AttendanceStatusTypeId\"},\"AttendanceStatusTypeName\":{\"entity\":\"AttendanceStatusType.cdm.json/AttendanceStatusType\",\"name\":\"AttendanceStatusTypeName\"},\"AttendanceStatusTypeDescription\":{\"entity\":\"AttendanceStatusType.cdm.json/AttendanceStatusType\",\"name\":\"AttendanceStatusTypeDescription\"}}}"
+			},
+			"Compressed": false,
+			"SerDeInfo": null,
+			"IsStoredAsSubdirectories": false
+		},
+		"Owner": null,
+		"CreateTime": 0,
+		"LastAccessTime": 0,
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false,
+		"ViewOriginalText": null,
+		"ViewExpandedText": null,
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"OriginObjectId": null,
+		"IsSharedEntity": false,
+		"PublishStatus": "PUBLISHED",
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"AttendanceStatusType\",\"path\":\"AttendanceStatusType.cdm.json/AttendanceStatusType\"},\"description\":\"An attendance status type that may be applied to an employee position.\\n\\nEx:\\n- On The Job\\n- Vacation\\n- Paid Time Off\\n- Sick Leave\\n- Unexplained Absence\\n- Work Related Injury\\n- Long Term Disability\",\"primaryKey\":[\"AttendanceStatusTypeId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AttendanceStatusType.cdm.json/AttendanceStatusType\",\"name\":\"AttendanceStatusTypeId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of an Attendance Status Type.\",\"isNullable\":false,\"name\":\"AttendanceStatusTypeId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AttendanceStatusType.cdm.json/AttendanceStatusType\",\"name\":\"AttendanceStatusTypeName\"},\"dataType\":\"string\",\"dataTypeLength\":256,\"description\":\"The name of an Attendance Status Type.\",\"isNullable\":true,\"name\":\"AttendanceStatusTypeName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"AttendanceStatusType.cdm.json/AttendanceStatusType\",\"name\":\"AttendanceStatusTypeDescription\"},\"dataType\":\"string\",\"dataTypeLength\":2048,\"description\":\"The description of an Attendance Status Type.\",\"isNullable\":true,\"name\":\"AttendanceStatusTypeDescription\"}]}}}",
+			"Description": "An attendance status type that may be applied to an employee position.\n\nEx:\n- On The Job\n- Vacation\n- Paid Time Off\n- Sick Leave\n- Unexplained Absence\n- Work Related Injury\n- Long Term Disability",
+			"DisplayFolderInfo": "{\"name\":\"Human Resources & Payroll\",\"colorCode\":\"#D65942\"}",
+			"PrimaryKeys": "AttendanceStatusTypeId",
+			"spark.sql.sources.provider": "csv",
+			"spark.sql.sources.schema.numParts": "1",
+			"spark.sql.sources.schema.part.0": "{\"type\":\"struct\",\"fields\":[{\"name\":\"AttendanceStatusTypeId\",\"type\":\"integer\",\"nullable\":false,\"metadata\":{}},{\"name\":\"AttendanceStatusTypeName\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"AttendanceStatusTypeDescription\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}"
+		},
+		"ObjectVersion": 1,
+		"ObjectId": "40c0b39e-207a-4dd3-ae78-3f59880be2dd",
+		"Description": "An attendance status type that may be applied to an employee position.\n\nEx:\n- On The Job\n- Vacation\n- Paid Time Off\n- Sick Leave\n- Unexplained Absence\n- Work Related Injury\n- Long Term Disability"
+	},
+	"type": "TABLE"
+}
